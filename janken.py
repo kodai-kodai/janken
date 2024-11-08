@@ -1,23 +1,10 @@
-
 from random import randint
 loop_flag = True
 count = 0
 cnt_user = 0
 cnt_cpu = 0
 
-def CPU_rand():
-    cpu =  randint(1, 3) 
-    if cpu == 1:
-        print('CPU：グー')
-    elif cpu == 2:
-        print('CPU：チョキ')
-    else:
-        print('CPU：パー')   
-    return  cpu
 
-
-
-loop_flag = True
 def user():
     input_flag = True
     print("1,グー")
@@ -38,7 +25,18 @@ def user():
             if user_hand in [1, 2, 3]:
                 input_flag = True
                 return user_hand
-            
+       
+def CPU_rand():
+    cpu =  randint(1, 3) 
+    if cpu == 1:
+        print('CPU：グー')
+    elif cpu == 2:
+        print('CPU：チョキ')
+    else:
+        print('CPU：パー')   
+    return  cpu
+
+      
 def judge_winner(user, cpu):
     if user == cpu:
         return "same"
@@ -47,5 +45,27 @@ def judge_winner(user, cpu):
     else:
         return "lose" 
 
+
+while count <= 3:
+    user = int(input('数を入力して下さい。'))
+    cpu = CPU_rand()
+    if judge_winner() == "same":
+        print('あいこです。再度入力してください。')
+        continue
+    elif judge_winner() == "win" :
+        cnt_user+=1
+        count+= 1
+    else:
+        cnt_cpu+=1
+        count+=1
+        
+
+print(f'あなた：{cnt_user}勝')
+print(f'コンピューター：{cnt_cpu}勝')
+if cnt_user > cnt_cpu:
+    print('あなたの総合勝利です！')
+else:
+    print('CPUの総合勝利です！')
+#キー入力の受付
 
 
