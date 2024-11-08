@@ -1,6 +1,3 @@
-# import janken
-from random import randint
-
 
 loop_flag = True
 def user():
@@ -30,10 +27,4 @@ def judge_winner(user, cpu):
     elif (user == 1 and cpu == 2) or (user == 2 and cpu == 3) or (user == 3 and cpu == 1):
         return "win"
     else:
-        return "lose" 
-
-loop_flag = True
-count = 0
-cnt_user = 0
-cnt_cpu = 0
-
+        return "lose"
