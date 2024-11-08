@@ -1,22 +1,4 @@
 
-from random import randint
-loop_flag = True
-count = 0
-cnt_user = 0
-cnt_cpu = 0
-
-def CPU_rand():
-    cpu =  randint(1, 3) 
-    if cpu == 1:
-        print('CPU：グー')
-    elif cpu == 2:
-        print('CPU：チョキ')
-    else:
-        print('CPU：パー')   
-    return  cpu
-
-
-
 loop_flag = True
 def user():
     input_flag = True
@@ -45,7 +27,4 @@ def judge_winner(user, cpu):
     elif (user == 1 and cpu == 2) or (user == 2 and cpu == 3) or (user == 3 and cpu == 1):
         return "win"
     else:
-        return "lose" 
-
-
-
+        return "lose"
